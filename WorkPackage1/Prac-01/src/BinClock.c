@@ -5,7 +5,7 @@
  * Further Modified By: Mark Njoroge 
  *
  * 
- * <STUDNUM_1> <STUDNUM_2>
+ * <NKMPIW001> <WTHJOS>
  * Date
 */
 
@@ -96,7 +96,9 @@ int main(void){
 	for (;;){
 		//Fetch the time from the RTC
 		//Write your logic here
-		
+		hours = wiringPiI2CReadReg8(RTC,HOUR_REGISTER );
+		mins = wiringPiI2CReadReg8(RTC, MIN_REGISTER);
+		secs = wiringPiI2CReadReg8(RTC, SEC_REGISTER);
 		//Toggle Seconds LED
 		//Write your logic here
 		if digitalRead(LED) == 0{
