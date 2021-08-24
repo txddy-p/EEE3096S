@@ -101,10 +101,10 @@ int main(void){
 		secs = wiringPiI2CReadReg8(RTC, SEC_REGISTER);
 		//Toggle Seconds LED
 		//Write your logic here
-		if digitalRead(LED) == 0{
+		if (digitalRead(LED) == 0){
 			digitalWrite(LED, HIGH);
 		}
-		else if digitalRead(LED) == 1{
+		else if (digitalRead(LED) == 1){
 			digitalWrite(LED, LOW);
 		}
 		// Print out the time we have stored on our RTC
