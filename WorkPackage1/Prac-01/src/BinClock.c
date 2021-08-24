@@ -204,7 +204,7 @@ void hourInc(void){
 		hr +=1;
 		
 		if (hr == 24){
-			hr = 0
+			hr = 0;
 		}
 		wiringPiI2CWriteReg8(RTC, HOUR_REGISTER, hr) ;
 	}
@@ -229,9 +229,9 @@ void minInc(void){
 		mn +=1;
 		
 		if (mn == 60){
-			mn = 0
+			mn = 0;
 		}
-		wiringPiI2CWriteReg8(RTC, HOUR_REGISTER, mn) ;
+		wiringPiI2CWriteReg8(RTC, MIN_REGISTER, mn) ;
 	}
 	lastInterruptTime = interruptTime;
 }
