@@ -77,10 +77,6 @@ def setup():
     # Setup board mode  which is tell the board you want to use physical pin numbers
     GPIO.setmode(GPIO.BOARD)
     # Setup regular GPIO
-    """GPIO.setup(11, GPIO.OUT)
-    GPIO.setup(13, GPIO.OUT)
-    GPIO.setup(15, GPIO.OUT)"""
-    #GPIO.setup(32, GPIO.OUT)
     # Setup PWM channels
     GPIO.setup(LED_value, GPIO.OUT)
     GPIO.output(LED_value, 0)
@@ -89,7 +85,6 @@ def setup():
     GPIO.setup(btn_submit, GPIO.IN, pull_up_down=GPIO.PUD_UP)
     GPIO.add_event_detect(btn_increase, GPIO.FALLING, callback=btn_increase_pressed, bouncetime=500)
     GPIO.add_event_detect(btn_submit, GPIO.FALLING, callback=btn_guess_pressed, bouncetime=500)
-    #pwm=GPIO.PWM(33,1000)
     # Setup debouncing and callbacks
     GPIO.setup(buzzer, GPIO.OUT)
     buzz = GPIO.PWM(buzzer, 1000)
@@ -193,11 +188,10 @@ def btn_guess_pressed(channel):
             print("Please enter your name!!")
             new_score = input()
             new_score = [new_score, guess_amount]
-            print(new_score)
             save_scores()
             main2()
     else:
-        print("Long")
+        print("Returning to menu")
         os.system('clear')
         main2()
     # if it's close enough, adjust the buzzer
